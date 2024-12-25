@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Prediction Result</title>
+    <link rel="stylesheet" type="text/css" href="/static/style.css" />
+  </head>
+  <body>
+    <h1>Prediction Result</h1>
+    {% if error %}
+    <p style="color: red">Error: {{ error }}</p>
+    {% else %}
+    <p>The predicted price for the house is:</p>
+    <h2 style="color: green">${{ price }}</h2>
+    {% endif %}
+    <a href="/">Make another prediction</a>
+  </body>
+</html>

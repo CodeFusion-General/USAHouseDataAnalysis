@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>House Price Prediction</title>
+    <link rel="stylesheet" type="text/css" href="/static/style.css" />
+    <style>
+      .tooltip {
+        position: relative;
+        display: inline-block;
+        cursor: pointer;
+      }
+
+      .tooltip .tooltiptext {
+        visibility: hidden;
+        width: 200px;
+        background-color: #555;
+        color: #fff;
+        text-align: center;
+        border-radius: 5px;
+        padding: 5px;
+        position: absolute;
+        z-index: 1;
+        bottom: 125%;
+        left: 50%;
+        margin-left: -100px;
+        opacity: 0;
+        transition: opacity 0.3s;
+      }
+
+      .tooltip .tooltiptext::after {
+        content: "";
+        position: absolute;
+        top: 100%;
+        left: 50%;
+        margin-left: -5px;
+        border-width: 5px;
+        border-style: solid;
+        border-color: #555 transparent transparent transparent;
+      }
+
+      .tooltip:hover .tooltiptext {
+        visibility: visible;
+        opacity: 1;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Predict House Price</h1>
+    <form action="/predict" method="post">
+      <label for="bed">
+        <span class="tooltip"
+          >Number of Bedrooms:
+          <span class="tooltiptext"
+            >The total number of bedrooms in the house.</span
+          >
+        </span>
+      </label>
+      <input type="text" id="bed" name="bed" /><br />
+
+      <label for="bath">
+        <span class="tooltip"
+          >Number of Bathrooms:
+          <span class="tooltiptext"
+            >The total number of bathrooms in the house.</span
+          >
+        </span>
+      </label>
+      <input type="text" id="bath" name="bath" /><br />
+
+      <label for="acre_lot">
+        <span class="tooltip"
+          >Acre Lot:
+          <span class="tooltiptext">The size of the land in acres.</span>
+        </span>
+      </label>
+      <input type="text" id="acre_lot" name="acre_lot" /><br />
+
+      <label for="house_size">
+        <span class="tooltip"
+          >House Size (sqft):
+          <span class="tooltiptext"
+            >The total area of the house in square feet.</span
+          >
+        </span>
+      </label>
+      <input type="text" id="house_size" name="house_size" /><br />
+
+      <label for="price_per_sqft">
+        <span class="tooltip"
+          >Price per Sqft:
+          <span class="tooltiptext"
+            >The price per square foot of the house.</span
+          >
+        </span>
+      </label>
+      <input type="text" id="price_per_sqft" name="price_per_sqft" /><br />
+
+      <label for="bed_bath_ratio">
+        <span class="tooltip"
+          >Bed-Bath Ratio:
+          <span class="tooltiptext">The ratio of bedrooms to bathrooms.</span>
+        </span>
+      </label>
+      <input type="text" id="bed_bath_ratio" name="bed_bath_ratio" /><br />
+
+      <button type="submit">Predict</button>
+    </form>
+    <footer>&copy; 2024 House Price Predictor</footer>
+  </body>
+</html>
