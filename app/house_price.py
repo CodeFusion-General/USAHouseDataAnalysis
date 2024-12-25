@@ -1,10 +1,11 @@
 from flask import Flask, request, render_template
 import pandas as pd
 import joblib
+import os
 
 app = Flask(__name__)
 
-model_path = r'E:\DijiKent\USAHouseDataAnalysis\app\model\best_rf_model.pkl'
+model_path = os.path.join("..", "app", "model", "best_rf_model.pkl")
 model = joblib.load(model_path)
 
 @app.route('/')
